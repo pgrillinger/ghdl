@@ -1,6 +1,0 @@
-.. _DOCKER:
-
-Docker containers
-#############
-
-

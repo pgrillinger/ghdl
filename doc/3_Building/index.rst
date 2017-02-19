@@ -1,6 +1,0 @@
-.. _BUILD:
-
-Building GHDL
-#############
-
-
