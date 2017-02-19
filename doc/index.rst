@@ -1,10 +1,10 @@
-.. raw:: latex
-
-   \part{Introduction}
-
---------------------------------------------------------------------------------
+This manual is the user and reference manual for GHDL. It does not contain an introduction to VHDL. Thus, the reader should have at least a basic knowledge of VHDL. A good knowledge of VHDL language reference manual (usually called LRM) is a plus.
 
 .. only:: html
+
+   .. raw:: html
+   
+      <hr />
 
    .. image:: /_static/logos/GitHub-Mark-32px.png
       :scale: 60
@@ -36,16 +36,6 @@
    .. raw:: html
    
       <hr />
-      
-      
-GHDL Documentation
-##################
-
-This manual is the user and reference manual for GHDL. It does not contain an
-introduction to VHDL. Thus, the reader should have at least a basic knowledge
-of VHDL. A good knowledge of VHDL language reference manual (usually called
-LRM) is a plus.
-
 
 .. only:: html
 
@@ -77,7 +67,6 @@ sanctus est Lorem ipsum dolor sit amet
 
    This document was generated on |docdate|.
    
-   
 .. toctree::
    :caption: Introduction
    :hidden:
@@ -85,6 +74,7 @@ sanctus est Lorem ipsum dolor sit amet
    0_Intro/WhatIsVHDL
    0_Intro/WhatIsGHDL
    0_Intro/Contributing
+   0_Intro/Copyrights
    License/gpl-2.0
    
 .. raw:: latex
@@ -107,15 +97,17 @@ sanctus est Lorem ipsum dolor sit amet
    :caption: Getting GHDL
    :hidden:
    
-   2_Releases/index
+   2_Getting/Releases
+   2_Getting/Docker
    3_Building/index
+   3_Building/VendorPrimitives
    
 .. raw:: latex
 
    \part{References}
    
 .. toctree::
-   :caption: References
+   :caption: Implementation references
    :hidden:
    
    4_References/CommandReference
@@ -130,6 +122,7 @@ sanctus est Lorem ipsum dolor sit amet
    :caption: Appendix
    :hidden:
    
+   X_ChangeLog/Roadmap
    X_ChangeLog/index
    genindex
    
