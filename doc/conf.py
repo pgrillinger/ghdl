@@ -18,6 +18,10 @@ import shlex
 import re
 import subprocess
 
+# http://docs.readthedocs.io/en/latest/getting_started.html#in-markdown
+from recommonmark.parser import CommonMarkParser
+source_parsers = { '.md': CommonMarkParser, }
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -55,7 +59,7 @@ templates_path = ['_templates', '_themes']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -146,10 +150,10 @@ todo_link_only = True
 # reST settings
 
 rst_prolog = """\
+.. include:: <isonum.txt>
 .. |br| raw:: html
 
    <br />
-   
 """
 
 # -- Options for HTML output ----------------------------------------------
@@ -157,7 +161,15 @@ rst_prolog = """\
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #html_theme = 'alabaster'
-html_theme = "sphinx_rtd_theme"
+#html_theme = "sphinx_rtd_theme"
+# Override default css to get a larger width for ReadTheDoc build            
+html_context = {                                                             
+    'css_files': [                                                           
+        'https://media.readthedocs.org/css/sphinx_rtd_theme.css',            
+        'https://media.readthedocs.org/css/readthedocs-doc-embed.css',       
+        '_static/theme_overrides.css',                                       
+    ],
+}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -346,5 +358,6 @@ intersphinx_mapping = {
 extlinks = {
 	'ghdlissue': ('https://github.com/tgingold/ghdl/issues/%s', 'issue #'),
 	'ghdlpull':  ('https://github.com/tgingold/ghdl/pull/%s', 'pull request #'),
-	'ghdlsrc':   ('https://github.com/tgingold/ghdl/blob/master/src/%s', None)
+	'ghdlsrc':   ('https://github.com/tgingold/ghdl/blob/master/src/%s', None),
+	'wikipedia':   ('https://en.wikipedia.org/wiki/%s', None)
 }

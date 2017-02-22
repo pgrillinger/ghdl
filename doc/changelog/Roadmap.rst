@@ -1,4 +1,4 @@
-.. _INTRO:Contributing:
+.. _CHANGE:Roadmap:
 
 Roadmap | Future improvements
 ############
@@ -12,5 +12,9 @@ I have several axes for `GHDL` improvements:
 * Graphical tools (to see waves and to debug)
 * Style checks
 * VITAL acceleration
+
+.. TODO::
+
+	- Convert VendorPrimitives Markdown to RST
 
 .. todolist::
