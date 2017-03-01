@@ -38,9 +38,9 @@ Lorem ipsum dolor sit amet...
    :caption: Introduction
    :hidden:
    
-   About
-   Contributing
-   Licenses
+   about
+   contribute
+   licenses
    
 .. raw:: latex
 
@@ -91,4 +91,5 @@ Lorem ipsum dolor sit amet...
    changelog/Roadmap
    changelog/index
    genindex
+   changelog/Meta
    
