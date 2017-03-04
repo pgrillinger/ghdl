@@ -64,15 +64,15 @@ Lorem ipsum dolor sit amet...
    
    getting/Releases
    getting/Docker
-   getting/Building
-   getting/PrecompileVendorPrimitives
+   building/Building
+   building/PrecompileVendorPrimitives
    
 .. raw:: latex
 
    \part{References}
    
 .. toctree::
-   :caption: Implementation references
+   :caption: Implementation References
    :hidden:
    
    references/CommandReference
