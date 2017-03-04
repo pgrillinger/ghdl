@@ -148,20 +148,21 @@ todo_include_todos = True
 todo_link_only = True
 
 # reST settings
-
-rst_prolog = """\
-.. include:: <isonum.txt>
-.. |br| raw:: html
-
-   <br />
-"""
+prologPath = "prolog.inc"
+try:
+	with open(prologPath, "r") as prologFile:
+		rst_prolog = prologFile.read()
+except Exception as ex:
+	print("[ERROR:] While reading '{0!s}'.".format(prologPath))
+	print(ex)
+	rst_prolog = ""
 
 # -- Options for HTML output ----------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #html_theme = 'alabaster'
-#html_theme = "sphinx_rtd_theme"
+html_theme = "sphinx_rtd_theme"
 # Override default css to get a larger width for ReadTheDoc build            
 html_context = {                                                             
     'css_files': [                                                           
@@ -348,7 +349,7 @@ texinfo_documents = [
 # Sphinx.Ext.InterSphinx
 # ==============================================================================
 intersphinx_mapping = {
-	'python': ('https://docs.python.org/3.5/', None),
+	'python': ('https://docs.python.org/3.6/', None),
 	'poc': ('http://poc-library.readthedocs.io/en/release', None),
 #	'ghdl':   ('http://ghdl.readthedocs.io/en/latest', None)
 }
@@ -357,7 +358,7 @@ intersphinx_mapping = {
 # Sphinx.Ext.ExtLinks
 # ==============================================================================
 extlinks = {
-    'ghdlsharp': ('https://github.com/tgingold/ghdl/issues/%s', '#'),
+  'ghdlsharp': ('https://github.com/tgingold/ghdl/issues/%s', '#'),
 	'ghdlissue': ('https://github.com/tgingold/ghdl/issues/%s', 'issue #'),
 	'ghdlpull':  ('https://github.com/tgingold/ghdl/pull/%s', 'pull request #'),
 	'ghdlsrc':   ('https://github.com/tgingold/ghdl/blob/master/src/%s', None),
