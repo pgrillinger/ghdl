@@ -1,11 +1,11 @@
-.. include:: shields.txt
+.. include:: shields.inc
 
 |SHIELD:gh-logo| |SHIELD:gitter| |SHIELD:code-lic| |SHIELD:doc-lic| |br| |SHIELD:travis-ci| |SHIELD:appveyor| |SHIELD:tag| |SHIELD:release|
 
 ------------------------------------ 
 	  
 GHDL Documentation
-########
+##################
 	  
 This manual is the user and reference manual for GHDL. It does not contain an introduction to VHDL. Thus, the reader should have at least a basic knowledge of VHDL. A good knowledge of VHDL language reference manual (usually called LRM) is a plus.
 	  
@@ -25,8 +25,8 @@ Lorem ipsum dolor sit amet...
 
 .. TODO:
 
-  - http://ghdl.free.fr
-  - In `doc/conf.py` add a command to copy `./COPYING.md` to `doc/License.md`, and `NEWS.md` to `doc/changelog/index.md`.
+  * http://ghdl.free.fr
+  * In `doc/conf.py` add a command to copy `./COPYING.md` to `doc/License.md`, and `NEWS.md` to `doc/changelog/index.md`.
 						 
 .. |docdate| date:: %b %d, %Y - %H:%M
 
@@ -65,7 +65,7 @@ Lorem ipsum dolor sit amet...
    getting/Releases
    getting/Docker
    getting/Building
-   getting/VendorPrimitives
+   getting/PrecompileVendorPrimitives
    
 .. raw:: latex
 
