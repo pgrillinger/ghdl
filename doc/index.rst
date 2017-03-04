@@ -64,7 +64,7 @@ Lorem ipsum dolor sit amet...
    
    getting/Releases
    getting/Docker
-   building/Building
+   Building GHDL <building/Building>
    building/PrecompileVendorPrimitives
    
 .. raw:: latex
