@@ -64,7 +64,13 @@ Supported Simulation and Verification Libraries
 
 * UVVM (for VHDL-2008)
 
-  * 
+  * uvvm_util
+  * uvvm_vvc_framework
+  * bitvis_vip_axistream
+  * bitvis_vip_uart
+  * bitvis_vip_sbi
+  * bitvis_vip_axilite
+  * bitvis_vip_i2c
 
 ---------------------------------------------------------------------
 
