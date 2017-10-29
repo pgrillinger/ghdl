@@ -363,19 +363,8 @@ package body Errorout is
 
       Msg_Len := 0;
 
-      if Flag_Color_Diagnostics = On then
-         Set_Color (Color_Locus);
-      end if;
-
-      if Progname then
-         Disp_Program_Name;
-      elsif File /= No_Source_File_Entry then
-         Disp_Location (Get_File_Name (File), Line, Col);
-      else
-         Disp_Location (Null_Identifier, 0, 0);
-      end if;
-
       --  Display level.
+      
       declare
          Id_Level : Msgid_Type;
       begin
@@ -392,38 +381,49 @@ package body Errorout is
                if Flag_Color_Diagnostics = On then
                   Set_Color (Color_Note);
                end if;
-               Put ("note:");
+               Put ("** Note:");
             when Msgid_Warning | Msgid_Warnings =>
                if Flag_Color_Diagnostics = On then
                   Set_Color (Color_Warning);
                end if;
-               Put ("warning:");
+               Put ("** Warning:");
             when Msgid_Error =>
                Nbr_Errors := Nbr_Errors + 1;
                if Flag_Color_Diagnostics = On then
                   Set_Color (Color_Error);
                end if;
-               if Msg_Len = 0
-                 or else Flag_Color_Diagnostics = On
-               then
-                  --  'error:' is displayed only if not location is present, or
-                  --  if messages are colored.
-                  Put ("error:");
-               end if;
+               Put ("** Error:");
             when Msgid_Fatal =>
                if Flag_Color_Diagnostics = On then
                   Set_Color (Color_Fatal);
                end if;
-               Put ("fatal:");
+               Put ("** Fatal:");
          end case;
       end;
+      Put (' ');
+      
+      
+      --  Display location.
+      
+      if Flag_Color_Diagnostics = On then
+         Set_Color (Color_Locus);
+      end if;
+      
+      if Progname then
+         Disp_Program_Name;
+      elsif File /= No_Source_File_Entry then
+         Disp_Location (Get_File_Name (File), Line, Col);
+      else
+         Disp_Location (Null_Identifier, 0, 0);
+      end if;
+      Put (' ');
+      
+      --  Display message.
 
       if Flag_Color_Diagnostics = On then
          Set_Color (Color_Message);
       end if;
-      Put (' ');
 
-      --  Display message.
       declare
          First, N : Positive;
          Argn : Integer;
